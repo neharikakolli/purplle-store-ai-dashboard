@@ -1,52 +1,63 @@
-# Purplle Store Intelligence Dashboard
+## API Endpoints
 
-## Overview
+GET /
+Returns API status
 
-This project is an AI-powered Store Intelligence System built for Purplle Tech Challenge 2026 Round 2.
+GET /analytics
+Returns current people count, alerts and peak crowd.
 
-The system uses CCTV footage and Computer Vision to detect, track, and analyze customer activity inside a retail store.
+GET /health
+Returns system health status.
 
-## Features
+## Business Insights
 
-* Person Detection using YOLOv8
-* Person Tracking with IDs
-* Live People Counting
-* Crowd Alert Detection
-* Event Logging
-* Streamlit Dashboard
-* CCTV Feed Integration
+- Occupancy Monitoring
+- Crowd Alerts
+- Peak Crowd Detection
+- Store Traffic Analytics
 
-## Tech Stack
+## Production Readiness
 
-* Python
-* YOLOv8
-* OpenCV
-* Streamlit
-* ByteTrack
+- Modular Architecture
+- REST API Support
+- Event Logging
+- Scalable Design
+## Engineering Decisions
 
-## How to Run
+- YOLOv8 chosen for fast and accurate person detection.
+- OpenCV used for real-time video processing.
+- FastAPI used for lightweight API services.
+- Streamlit used for rapid dashboard development.
+## Event Schema
 
-### Detection & Tracking
+{
+  "timestamp": "2026-06-04T19:30:00",
+  "event_type": "crowd_alert",
+  "people_count": 12,
+  "camera_id": "cam_01"
+}
+## System Architecture
 
-Run:
+CCTV Feed
+    ↓
+OpenCV Processing
+    ↓
+YOLOv8 Detection
+    ↓
+Person Tracking
+    ↓
+Crowd Analysis
+    ↓
+Event Logging
+    ↓
+FastAPI Services
+    ↓
+Streamlit Dashboard
+## Future Enhancements
 
-py test_yolo.py
-
-### Dashboard
-
-Run:
-
-streamlit run dashboard.py
-
-## Output
-
-The system generates:
-
-* CCTV Detection Feed
-* Crowd Alert Events
-* Event History Dashboard
-* Store Analytics
-
-## Challenge
-
-Purplle Tech Challenge 2026 – Round 2
+- Customer Heatmaps
+- Queue Detection
+- Multi-Camera Analytics
+- Shelf Monitoring
+- Cloud Deployment
+- Real-Time Notifications
